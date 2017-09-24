@@ -55,7 +55,8 @@ import 'core-js/es7/reflect';
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
 
-
+// Add Web Components Polyfill
+import '@webcomponents/webcomponentsjs/webcomponents-sd-ce.js';
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

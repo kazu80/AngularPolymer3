@@ -1,14 +1,25 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AngularPolymer3</title>
-  <base href="/">
+    <meta charset="utf-8">
+    <title>AngularPolymer3</title>
+    <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+<app-root>Loading...</app-root>
+
+<div id="ce-es5-shim">
+    <script>
+        if(!window.customElements) {
+            var ceShimContainer = document.querySelector('#ce-es5-shim');
+            ceShimContainer.parentElement.removeChild(ceShimContainer);
+        }
+    </script>
+    <script src="../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+</div>
+
 </body>
 </html>
