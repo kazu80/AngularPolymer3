@@ -13,14 +13,12 @@
 
 <div id="ce-es5-shim">
     <script>
-        console.log('foo');
         if(!window.customElements) {
-            console.log('bar');
             var ceShimContainer = document.querySelector('#ce-es5-shim');
             ceShimContainer.parentElement.removeChild(ceShimContainer);
         }
     </script>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+    <script src="assets/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
 </div>
 
 </body>
