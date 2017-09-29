@@ -10,6 +10,9 @@ ShadyCSS.prepareTemplate(listboxTemplate, 'dash-listbox');
 export class FooBar extends HTMLElement {
     constructor() {
         super();
+
+        console.log ('foo');
+
         this.attachShadow({ mode: 'open' });
     }
 }
