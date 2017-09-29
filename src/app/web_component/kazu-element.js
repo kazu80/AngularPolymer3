@@ -1,6 +1,7 @@
 const template = document.createElement ('template');
 template.innerHTML = `
     <div>My name is kazu</div>
+    <slot></slot>
             `.trim ();
 
 class KazuElement extends HTMLElement {
@@ -12,12 +13,14 @@ class KazuElement extends HTMLElement {
         const clone = document.importNode (template.content, true);
         shadow.appendChild (clone);
 
+        /*
         const img = document.createElement ('img');
         img.width = '150';
         img.height = '150';
         img.alt = 'this is image';
 
         shadow.appendChild (img);
+                */
     }
 
     connectedCallback () {
