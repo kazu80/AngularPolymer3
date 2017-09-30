@@ -1,14 +1,39 @@
 <!-- Load the Polymer.Element base class -->
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-styles/color.html">
 <dom-module id="kazu-polymer">
     <template>
+        <style>
+            paper-button.indigo {
+                background-color : var(--paper-indigo-500);
+                color            : white;
+                                 --paper-button-raised-keyboard-focus: {
+                                     background-color : var(--paper-pink-a200) !important;
+                                     color            : white !important;
+                                 };
+            }
+
+            paper-button.indigo:hover {
+                background-color : var(--paper-indigo-400);
+            }
+        </style>
+
         <div>Hello Polymer</div>
-        <slot></slot>
+        <paper-button class="indigo" on-click="clickButton">paper button!!! :)</paper-button>
     </template>
 
     <script>
         class KazuPolymer extends Polymer.Element {
             static get is () { return 'kazu-polymer'; }
+
+            constructor () {
+                super ();
+            }
+
+            clickButton () {
+                console.log ('click button!!');
+            }
         }
 
         customElements.define (KazuPolymer.is, KazuPolymer);
