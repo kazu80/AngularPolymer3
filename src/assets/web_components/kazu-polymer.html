@@ -1,0 +1,16 @@
+<!-- Load the Polymer.Element base class -->
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<dom-module id="kazu-polymer">
+    <template>
+        <div>Hello Polymer</div>
+        <slot></slot>
+    </template>
+
+    <script>
+        class KazuPolymer extends Polymer.Element {
+            static get is () { return 'kazu-polymer'; }
+        }
+
+        customElements.define (KazuPolymer.is, KazuPolymer);
+    </script>
+</dom-module>
