@@ -8,6 +8,7 @@
             paper-button.indigo {
                 background-color : var(--paper-indigo-500);
                 color            : white;
+
                                  --paper-button-raised-keyboard-focus: {
                                      background-color : var(--paper-pink-a200) !important;
                                      color            : white !important;
@@ -27,12 +28,24 @@
         class KazuPolymer extends Polymer.Element {
             static get is () { return 'kazu-polymer'; }
 
+            static get properties () {
+                return {
+                    isClick: {
+                        type  : Boolean,
+                        value : false,
+                        notify: true,
+                    }
+                }
+            }
+
             constructor () {
                 super ();
             }
 
             clickButton () {
-                console.log ('click button!!');
+                this.isClick = !this.isClick;
+
+                console.log (this.isClick);
             }
         }
 
