@@ -11,9 +11,7 @@ export class FooBar extends HTMLElement {
     constructor() {
         super();
 
-        console.log ('foo');
-
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow ({mode: 'open'});
     }
 }
 

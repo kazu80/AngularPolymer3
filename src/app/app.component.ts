@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-root',
     // templateUrl: './app.component.html',
     template: `
-        ccc{{isClick}}
-        <kazu-polymer [(isClick)]="isClick"></kazu-polymer>
+        <kazu-polymer id="foo"></kazu-polymer>
     `,
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     title   = 'app';
-    isClick = false;
 
-    click() {
-        // this.isClick = !this.isClick;
+    ngOnInit(): void {
+        const kazu = document.getElementById('foo');
+
+        kazu.addEventListener('kick', function (e) {
+            console.log('kick!!!');
+        });
     }
 }

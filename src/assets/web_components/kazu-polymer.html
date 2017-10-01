@@ -21,7 +21,7 @@
         </style>
 
         <div>Hello Polymer</div>
-        <paper-button class="indigo" on-click="clickButton">paper button!!! :)</paper-button>
+        <paper-button class="indigo" on-click="handleClick">paper button!!! :)</paper-button>
     </template>
 
     <script>
@@ -30,10 +30,13 @@
 
             static get properties () {
                 return {
-                    isClick: {
+                    isClick       : {
                         type  : Boolean,
                         value : false,
                         notify: true,
+                    },
+                    clickButtonFoo: {
+                        type: Object
                     }
                 }
             }
@@ -45,7 +48,14 @@
             clickButton () {
                 this.isClick = !this.isClick;
 
-                console.log (this.isClick);
+                console.log (this.clickButtonFoo);
+                // this.clickButtonFoo();
+
+                //this.fire('click-button', {}, {});
+            }
+
+            handleClick (e) {
+                this.dispatchEvent (new CustomEvent ('kick', {detail: {kicked: true}}));
             }
         }
 
